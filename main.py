@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 import time
-# import csv
+import csv
+
 
 #To scrape local file!!
 # with open('home.html','r') as html_file:
@@ -29,9 +30,7 @@ def find_jobs():
     html_text = requests.get('https://kosovajob.com/').text
     soup = BeautifulSoup(html_text, 'lxml')
     texts = soup.find_all('div', class_='jobListCnts jobListPrm')
-    with open('posts/job.txt', 'w') as file:
-        writer = csv.writer(file)
-        writer.writerow(["Puna me titull", "Qytetin", "Koha e mbetur e shpalljes edhe", "More_info"])
+    with open('posts/job.txt', 'w') as f:
         for index, text in enumerate(texts):
             city = text.find('div', class_='jobListCity').text.replace(' ', '')
 
@@ -44,7 +43,8 @@ def find_jobs():
                     # with open(f'posts/{index}.txt', 'w') as f:
                     #     f.write(f"Puna me titull: {title} ne qytetin {city} koha e mbetur e shpalljes edhe: {date}\n")
                     #     f.write(f"More info: {more_info}")
-                    writer.writerow([title, city, date, more_info])
+                    f.write(f"Puna me titull: {title} ne qytetin {city} koha e mbetur e shpalljes edhe: {date}. Me shume info: {more_info}\n")
+
                     print(f"Job saved: {title} - {city} - {date} - {more_info}")
                     print(f"File saves: {index}")
 

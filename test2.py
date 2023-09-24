@@ -9,7 +9,7 @@ print(f'Filtering out {Job_title}')
 
 # Open the file before the loop
 with open('posts/job.txt', 'w') as file:
-    writer = csv.writer(file)
+    writer = (file)
     writer.writerow(["Puna me titull", "Qytetin", "Koha e mbetur e shpalljes edhe", "More_info"])
 
     def find_jobs():
