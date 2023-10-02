@@ -3,6 +3,7 @@ import requests
 import time
 import csv
 
+#this is for scraping KosovaJob and local html file
 
 #To scrape local file!!
 # with open('home.html','r') as html_file:
@@ -59,7 +60,7 @@ if __name__ =='__main__':
         time.sleep(time_wait)
 
 
-#With fakeUser_agents scrapeing
+# With fakeUser_agents scrapeing
 # URL = 'https://stackoverflow.com/questions/62303739/beautiful-soup-returning'
 # from fake_useragent import UserAgent
 # headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
